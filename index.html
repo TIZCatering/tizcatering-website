@@ -1,0 +1,2329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tiz Catering | Authentic Nigerian Cuisine in Calgary</title>
+  <meta name="description" content="Tiz Catering brings authentic Nigerian cuisine to Calgary. Order jollof rice, puffpuff, pepper soup and more for your events, parties, and everyday meals.">
+  <meta name="keywords" content="Nigerian catering Calgary, African food Calgary, jollof rice Calgary, Nigerian party food, Tiz Catering">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Tiz Catering | Authentic Nigerian Cuisine in Calgary">
+  <meta property="og:description" content="Authentic Nigerian cuisine, made with love in Calgary. Catering for events, parties, and everyday meals.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tizcatering.com">
+  <meta property="og:image" content="https://tizcatering.com/logo.jpg">
+  <meta property="og:locale" content="en_CA">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tiz Catering | Authentic Nigerian Cuisine in Calgary">
+  <meta name="twitter:description" content="Authentic Nigerian cuisine, made with love in Calgary.">
+
+  <!-- Favicon (inline SVG) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231a3a3a'/%3E%3Ctext x='16' y='23' font-family='serif' font-size='22' font-weight='bold' fill='%23d4a017' text-anchor='middle'%3ET%3C/text%3E%3C/svg%3E">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================
+       CSS RESET & BASE
+       ============================================ */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --teal: #1a3a3a;
+      --teal-light: #245050;
+      --teal-dark: #0f2626;
+      --red: #c0392b;
+      --red-hover: #a93226;
+      --gold: #d4a017;
+      --gold-light: #e8c547;
+      --cream: #faf6ef;
+      --cream-dark: #f0e8d8;
+      --warm-white: #fffdf8;
+      --text-dark: #2c2c2c;
+      --text-medium: #555;
+      --text-light: #888;
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+      --shadow-md: 0 4px 16px rgba(0,0,0,0.12);
+      --shadow-lg: 0 8px 32px rgba(0,0,0,0.16);
+      --radius: 12px;
+      --radius-lg: 20px;
+      --transition: 0.3s ease;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--text-dark);
+      background: var(--warm-white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+      line-height: 1.2;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* ============================================
+       NAVIGATION
+       ============================================ */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(26, 58, 58, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 0 1.5rem;
+      transition: var(--transition);
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .nav-logo img {
+      height: 45px;
+      width: auto;
+      border-radius: 8px;
+    }
+
+    .nav-logo span {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--gold);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.85);
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gold);
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 5px;
+      background: none;
+      border: none;
+    }
+
+    .hamburger span {
+      width: 28px;
+      height: 3px;
+      background: var(--gold);
+      border-radius: 3px;
+      transition: var(--transition);
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 6px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -6px);
+    }
+
+    /* ============================================
+       HERO SECTION
+       ============================================ */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(135deg, var(--teal-dark) 0%, var(--teal) 40%, var(--teal-light) 100%);
+      position: relative;
+      overflow: hidden;
+      padding: 120px 1.5rem 80px;
+    }
+
+    /* Subtle pattern overlay */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: radial-gradient(circle at 20% 50%, rgba(212, 160, 23, 0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(212, 160, 23, 0.06) 0%, transparent 40%),
+                        radial-gradient(circle at 60% 80%, rgba(192, 57, 43, 0.05) 0%, transparent 40%);
+      pointer-events: none;
+    }
+
+    /* Geometric African-inspired pattern */
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0.03;
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 50px, rgba(255,255,255,0.5) 50px, rgba(255,255,255,0.5) 51px),
+        repeating-linear-gradient(90deg, transparent, transparent 50px, rgba(255,255,255,0.5) 50px, rgba(255,255,255,0.5) 51px);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+    }
+
+    .hero-logo {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--gold);
+      box-shadow: 0 0 40px rgba(212, 160, 23, 0.3);
+      margin-bottom: 2rem;
+      animation: fadeInUp 0.8s ease;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      color: white;
+      margin-bottom: 0.5rem;
+      animation: fadeInUp 0.8s ease 0.2s both;
+    }
+
+    .hero h1 .gold {
+      color: var(--gold);
+    }
+
+    .hero-tagline {
+      font-size: 1.25rem;
+      color: rgba(255,255,255,0.8);
+      font-weight: 300;
+      margin-bottom: 2.5rem;
+      animation: fadeInUp 0.8s ease 0.4s both;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeInUp 0.8s ease 0.6s both;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.9rem 2rem;
+      border-radius: 50px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      border: none;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: var(--red);
+      color: white;
+      box-shadow: 0 4px 15px rgba(192, 57, 43, 0.4);
+    }
+
+    .btn-primary:hover {
+      background: var(--red-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(192, 57, 43, 0.5);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--gold);
+      border: 2px solid var(--gold);
+    }
+
+    .btn-secondary:hover {
+      background: var(--gold);
+      color: var(--teal-dark);
+      transform: translateY(-2px);
+    }
+
+    /* ============================================
+       SECTION STYLES
+       ============================================ */
+    .section {
+      padding: 5rem 1.5rem;
+    }
+
+    .section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 1rem;
+      font-size: 2.5rem;
+      color: var(--teal);
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--text-medium);
+      font-size: 1.1rem;
+      margin-bottom: 3rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .gold-line {
+      width: 60px;
+      height: 3px;
+      background: var(--gold);
+      margin: 1rem auto 1.5rem;
+      border-radius: 3px;
+    }
+
+    /* ============================================
+       MENU SECTION
+       ============================================ */
+    #menu {
+      background: var(--cream);
+    }
+
+    .menu-filters {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+
+    .filter-btn {
+      padding: 0.6rem 1.5rem;
+      border-radius: 50px;
+      border: 2px solid var(--teal);
+      background: transparent;
+      color: var(--teal);
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--teal);
+      color: white;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .menu-card {
+      background: white;
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      border: 1px solid rgba(212, 160, 23, 0.15);
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .menu-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s ease;
+    }
+
+    .menu-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-4px);
+      border-color: var(--gold);
+    }
+
+    .menu-card.visible:hover {
+      transform: translateY(-4px);
+    }
+
+    .menu-card-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .menu-emoji {
+      font-size: 2.2rem;
+      flex-shrink: 0;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--cream);
+      border-radius: 12px;
+    }
+
+    .menu-card-info {
+      flex: 1;
+    }
+
+    .menu-card-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--teal);
+      margin-bottom: 0.25rem;
+    }
+
+    .menu-card-desc {
+      font-size: 0.85rem;
+      color: var(--text-medium);
+      line-height: 1.4;
+      margin-bottom: 0.75rem;
+    }
+
+    .menu-card-category {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--gold);
+      background: rgba(212, 160, 23, 0.1);
+      padding: 0.2rem 0.6rem;
+      border-radius: 20px;
+      margin-bottom: 0.75rem;
+    }
+
+    .menu-card-bottom {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .variant-select {
+      flex: 1;
+      min-width: 140px;
+      padding: 0.5rem 0.75rem;
+      border: 1.5px solid #ddd;
+      border-radius: 8px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.85rem;
+      color: var(--text-dark);
+      background: white;
+      cursor: pointer;
+      transition: var(--transition);
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M6 8L1 3h10z' fill='%23555'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      padding-right: 28px;
+    }
+
+    .variant-select:focus {
+      border-color: var(--gold);
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(212, 160, 23, 0.15);
+    }
+
+    .menu-price {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--red);
+      white-space: nowrap;
+    }
+
+    .add-to-cart-btn {
+      padding: 0.5rem 1.2rem;
+      background: var(--teal);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+
+    .add-to-cart-btn:hover {
+      background: var(--teal-light);
+      transform: scale(1.05);
+    }
+
+    .add-to-cart-btn:active {
+      transform: scale(0.95);
+    }
+
+    /* ============================================
+       HOW TO ORDER SECTION
+       ============================================ */
+    #how-to-order {
+      background: var(--warm-white);
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .step-card {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      background: white;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+
+    .step-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .step-number {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--teal) 0%, var(--teal-light) 100%);
+      color: var(--gold);
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+    }
+
+    .step-card h3 {
+      font-size: 1.2rem;
+      color: var(--teal);
+      margin-bottom: 0.5rem;
+    }
+
+    .step-card p {
+      font-size: 0.9rem;
+      color: var(--text-medium);
+    }
+
+    /* ============================================
+       ABOUT SECTION
+       ============================================ */
+    #about {
+      background: linear-gradient(135deg, var(--cream) 0%, var(--cream-dark) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #about::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0.03;
+      background-image:
+        repeating-linear-gradient(45deg, transparent, transparent 20px, var(--teal) 20px, var(--teal) 21px),
+        repeating-linear-gradient(-45deg, transparent, transparent 20px, var(--teal) 20px, var(--teal) 21px);
+      pointer-events: none;
+    }
+
+    .about-content {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .about-content p {
+      font-size: 1.1rem;
+      color: var(--text-medium);
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+    }
+
+    .about-features {
+      display: flex;
+      justify-content: center;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    .about-feature {
+      text-align: center;
+    }
+
+    .about-feature .emoji {
+      font-size: 2.5rem;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .about-feature span {
+      font-weight: 600;
+      color: var(--teal);
+      font-size: 0.95rem;
+    }
+
+    /* ============================================
+       FOOTER
+       ============================================ */
+    footer {
+      background: var(--teal-dark);
+      color: rgba(255,255,255,0.8);
+      padding: 3.5rem 1.5rem 2rem;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .footer-brand h3 {
+      font-size: 1.5rem;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-brand p {
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    .footer-contact h4,
+    .footer-social h4 {
+      font-size: 1.1rem;
+      color: white;
+      margin-bottom: 1rem;
+    }
+
+    .footer-contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+      font-size: 0.9rem;
+    }
+
+    .footer-contact-item .icon {
+      font-size: 1.2rem;
+    }
+
+    .footer-contact-item a:hover {
+      color: var(--gold);
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.2rem;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50px;
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+
+    .social-link:hover {
+      background: var(--gold);
+      color: var(--teal-dark);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.5);
+    }
+
+    /* ============================================
+       FLOATING CART BUTTON
+       ============================================ */
+    .cart-float {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 999;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: var(--red);
+      color: white;
+      border: none;
+      cursor: pointer;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      transition: var(--transition);
+    }
+
+    .cart-float:hover {
+      transform: scale(1.1);
+      background: var(--red-hover);
+    }
+
+    .cart-badge {
+      position: absolute;
+      top: -4px;
+      right: -4px;
+      width: 24px;
+      height: 24px;
+      background: var(--gold);
+      color: var(--teal-dark);
+      font-size: 0.75rem;
+      font-weight: 700;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .cart-badge.hidden {
+      display: none;
+    }
+
+    /* ============================================
+       CART DRAWER
+       ============================================ */
+    .cart-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 2000;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+    }
+
+    .cart-overlay.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .cart-drawer {
+      position: fixed;
+      top: 0;
+      right: -420px;
+      width: 400px;
+      max-width: 90vw;
+      height: 100vh;
+      background: var(--teal);
+      z-index: 2001;
+      transition: right 0.4s ease;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .cart-drawer.open {
+      right: 0;
+    }
+
+    .cart-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .cart-header h3 {
+      color: var(--gold);
+      font-size: 1.3rem;
+    }
+
+    .cart-close {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 5px;
+      transition: var(--transition);
+    }
+
+    .cart-close:hover {
+      color: var(--gold);
+    }
+
+    .cart-items {
+      flex: 1;
+      overflow-y: auto;
+      padding: 1rem 1.5rem;
+    }
+
+    .cart-empty {
+      text-align: center;
+      color: rgba(255,255,255,0.5);
+      padding: 3rem 1rem;
+      font-size: 0.95rem;
+    }
+
+    .cart-empty .empty-icon {
+      font-size: 3rem;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .cart-item {
+      background: rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 1rem;
+      margin-bottom: 0.75rem;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .cart-item-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.5rem;
+    }
+
+    .cart-item-name {
+      color: white;
+      font-weight: 600;
+      font-size: 0.95rem;
+      flex: 1;
+      padding-right: 0.5rem;
+    }
+
+    .cart-item-remove {
+      background: none;
+      border: none;
+      color: rgba(255,255,255,0.4);
+      font-size: 1.2rem;
+      cursor: pointer;
+      padding: 0;
+      line-height: 1;
+      transition: var(--transition);
+    }
+
+    .cart-item-remove:hover {
+      color: var(--red);
+    }
+
+    .cart-item-variant {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 0.5rem;
+    }
+
+    .cart-item-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .cart-qty {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .cart-qty button {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(255,255,255,0.3);
+      background: transparent;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .cart-qty button:hover {
+      background: var(--gold);
+      color: var(--teal-dark);
+      border-color: var(--gold);
+    }
+
+    .cart-qty span {
+      color: white;
+      font-weight: 600;
+      min-width: 20px;
+      text-align: center;
+    }
+
+    .cart-item-price {
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .cart-footer {
+      padding: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      background: var(--teal-dark);
+    }
+
+    .cart-total {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .cart-total-label {
+      color: rgba(255,255,255,0.7);
+      font-size: 1rem;
+    }
+
+    .cart-total-price {
+      color: var(--gold);
+      font-size: 1.5rem;
+      font-weight: 700;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .cart-checkout-btn {
+      width: 100%;
+      padding: 1rem;
+      background: var(--red);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .cart-checkout-btn:hover {
+      background: var(--red-hover);
+    }
+
+    .cart-checkout-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    /* ============================================
+       ORDER FORM MODAL
+       ============================================ */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 3000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+    }
+
+    .modal-overlay.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal {
+      background: white;
+      border-radius: var(--radius-lg);
+      width: 100%;
+      max-width: 600px;
+      max-height: 90vh;
+      overflow-y: auto;
+      transform: translateY(30px);
+      transition: transform 0.4s ease;
+    }
+
+    .modal-overlay.open .modal {
+      transform: translateY(0);
+    }
+
+    .modal-header {
+      position: sticky;
+      top: 0;
+      background: var(--teal);
+      padding: 1.5rem;
+      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 1;
+    }
+
+    .modal-header h3 {
+      color: var(--gold);
+      font-size: 1.3rem;
+    }
+
+    .modal-close {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .modal-body {
+      padding: 1.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--teal);
+      margin-bottom: 0.4rem;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1.5px solid #ddd;
+      border-radius: 10px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.95rem;
+      transition: var(--transition);
+      background: white;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: var(--gold);
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(212, 160, 23, 0.15);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .radio-group {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 0.4rem;
+    }
+
+    .radio-label {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+      font-size: 0.95rem;
+    }
+
+    .radio-label input[type="radio"] {
+      width: auto;
+      accent-color: var(--teal);
+    }
+
+    .order-summary-box {
+      background: var(--cream);
+      border-radius: 10px;
+      padding: 1rem;
+      margin-bottom: 1.25rem;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+
+    .order-summary-box h4 {
+      font-size: 0.95rem;
+      color: var(--teal);
+      margin-bottom: 0.75rem;
+    }
+
+    .order-summary-item {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      padding: 0.3rem 0;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .order-summary-item:last-child {
+      border-bottom: none;
+    }
+
+    .order-summary-total {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 700;
+      font-size: 1rem;
+      margin-top: 0.75rem;
+      padding-top: 0.75rem;
+      border-top: 2px solid var(--gold);
+      color: var(--teal);
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 1rem;
+      background: var(--red);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      margin-top: 0.5rem;
+    }
+
+    .submit-btn:hover {
+      background: var(--red-hover);
+      transform: translateY(-2px);
+    }
+
+    /* ============================================
+       ANIMATIONS
+       ============================================ */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Toast notification */
+    .toast {
+      position: fixed;
+      bottom: 7rem;
+      right: 2rem;
+      background: var(--teal);
+      color: white;
+      padding: 0.75rem 1.25rem;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      box-shadow: var(--shadow-md);
+      z-index: 5000;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+      pointer-events: none;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ============================================
+       RESPONSIVE
+       ============================================ */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: var(--teal);
+        flex-direction: column;
+        padding: 1.5rem;
+        gap: 1.25rem;
+        box-shadow: var(--shadow-md);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero-tagline {
+        font-size: 1.05rem;
+      }
+
+      .hero-logo {
+        width: 120px;
+        height: 120px;
+      }
+
+      .section {
+        padding: 3.5rem 1rem;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .menu-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .menu-card-bottom {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .menu-price {
+        text-align: center;
+      }
+
+      .add-to-cart-btn {
+        text-align: center;
+      }
+
+      .cart-float {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        width: 55px;
+        height: 55px;
+      }
+
+      .steps-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .footer-contact-item {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .hero h1 {
+        font-size: 1.7rem;
+      }
+
+      .btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+      }
+    }
+
+    /* Scroll animation utility */
+    .fade-in-section {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================
+       NAVIGATION
+       ============================================ -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <img src="logo.jpg" alt="Tiz Catering Logo">
+        <span>Tiz Catering</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#menu" onclick="closeMenu()">Menu</a></li>
+        <li><a href="#how-to-order" onclick="closeMenu()">How to Order</a></li>
+        <li><a href="#about" onclick="closeMenu()">About</a></li>
+        <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ============================================
+       HERO SECTION
+       ============================================ -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <img src="logo.jpg" alt="Tiz Catering" class="hero-logo">
+      <h1>Authentic <span class="gold">Nigerian</span> Cuisine</h1>
+      <p class="hero-tagline">Made with love in Calgary. Catering for events, parties, and everyday meals.</p>
+      <div class="hero-buttons">
+        <a href="#menu" class="btn btn-primary">🍽 View Our Menu</a>
+        <a href="https://www.instagram.com/tizkitchenafrica/" target="_blank" rel="noopener" class="btn btn-secondary">📸 Follow Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       MENU SECTION
+       ============================================ -->
+  <section class="section" id="menu">
+    <div class="section-inner">
+      <h2 class="section-title fade-in-section">Our Menu</h2>
+      <div class="gold-line"></div>
+      <p class="section-subtitle fade-in-section">Explore our selection of authentic Nigerian dishes. All prices in CAD.</p>
+
+      <div class="menu-filters fade-in-section">
+        <button class="filter-btn active" onclick="filterMenu('all')">All</button>
+        <button class="filter-btn" onclick="filterMenu('pastry')">Pastry &amp; Snacks</button>
+        <button class="filter-btn" onclick="filterMenu('rice')">Rice Dishes &amp; Proteins</button>
+        <button class="filter-btn" onclick="filterMenu('soups')">Soups &amp; Stews</button>
+      </div>
+
+      <div class="menu-grid" id="menuGrid">
+        <!-- Menu cards generated by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       HOW TO ORDER SECTION
+       ============================================ -->
+  <section class="section" id="how-to-order">
+    <div class="section-inner">
+      <h2 class="section-title fade-in-section">How to Order</h2>
+      <div class="gold-line"></div>
+      <p class="section-subtitle fade-in-section">Getting your favorite Nigerian dishes is simple.</p>
+
+      <div class="steps-grid fade-in-section">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h3>Browse the Menu</h3>
+          <p>Explore our dishes and add your favorites to the cart.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h3>Review Your Cart</h3>
+          <p>Adjust quantities and sizes. Check your total.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h3>Place Your Order</h3>
+          <p>Fill in your details and choose pickup or delivery.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">4</div>
+          <h3>Enjoy!</h3>
+          <p>We will confirm your order and have it ready for you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       ABOUT SECTION
+       ============================================ -->
+  <section class="section" id="about">
+    <div class="section-inner">
+      <div class="about-content fade-in-section">
+        <h2 class="section-title">About Tiz Catering</h2>
+        <div class="gold-line"></div>
+        <p>
+          At Tiz Catering, we bring the rich, bold flavors of Nigeria to Calgary. Every dish is prepared with authentic recipes, fresh ingredients, and the kind of love that turns a meal into a celebration.
+        </p>
+        <p>
+          Whether you are planning a wedding, birthday party, corporate event, or just craving a taste of home, we have you covered. From our signature Jollof Rice to hearty soups and perfectly spiced proteins, every order is made to satisfy.
+        </p>
+        <p>
+          Based in Calgary, AB, we cater events of all sizes and also offer individual tray orders for everyday enjoyment. Let us bring the flavor to your table.
+        </p>
+
+        <div class="about-features">
+          <div class="about-feature">
+            <span class="emoji">🍲</span>
+            <span>Authentic Recipes</span>
+          </div>
+          <div class="about-feature">
+            <span class="emoji">🎉</span>
+            <span>Events &amp; Parties</span>
+          </div>
+          <div class="about-feature">
+            <span class="emoji">❤️</span>
+            <span>Made with Love</span>
+          </div>
+          <div class="about-feature">
+            <span class="emoji">📦</span>
+            <span>Pickup &amp; Delivery</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FOOTER / CONTACT
+       ============================================ -->
+  <footer id="contact">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h3>Tiz Catering</h3>
+        <p>Authentic Nigerian cuisine, made with love in Calgary. Bringing bold flavors to your events, parties, and everyday meals.</p>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Get in Touch</h4>
+        <div class="footer-contact-item">
+          <span class="icon">📞</span>
+          <a href="tel:5875781979">587-578-1979</a>
+        </div>
+        <div class="footer-contact-item">
+          <span class="icon">✉️</span>
+          <a href="mailto:orders@tizcatering.com">orders@tizcatering.com</a>
+        </div>
+        <div class="footer-contact-item">
+          <span class="icon">📍</span>
+          <span>Calgary, AB, Canada</span>
+        </div>
+      </div>
+
+      <div class="footer-social">
+        <h4>Follow Us</h4>
+        <a href="https://www.instagram.com/tizkitchenafrica/" target="_blank" rel="noopener" class="social-link">
+          📸 @tizkitchenafrica
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      &copy; 2026 Tiz Catering. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- ============================================
+       FLOATING CART BUTTON
+       ============================================ -->
+  <button class="cart-float" id="cartFloat" onclick="openCart()" aria-label="Open shopping cart">
+    🛒
+    <span class="cart-badge hidden" id="cartBadge">0</span>
+  </button>
+
+  <!-- ============================================
+       CART DRAWER
+       ============================================ -->
+  <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h3>🛒 Your Cart</h3>
+      <button class="cart-close" onclick="closeCart()" aria-label="Close cart">&times;</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty">
+        <span class="empty-icon">🍽</span>
+        Your cart is empty.<br>Browse the menu to add items!
+      </div>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span class="cart-total-label">Total</span>
+        <span class="cart-total-price" id="cartTotal">$0.00</span>
+      </div>
+      <button class="cart-checkout-btn" id="checkoutBtn" onclick="openOrderForm()" disabled>Place Order</button>
+    </div>
+  </div>
+
+  <!-- ============================================
+       ORDER FORM MODAL
+       ============================================ -->
+  <div class="modal-overlay" id="orderModal">
+    <div class="modal">
+      <div class="modal-header">
+        <h3>📝 Place Your Order</h3>
+        <button class="modal-close" onclick="closeOrderForm()" aria-label="Close order form">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form name="orders" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="orderForm" onsubmit="return handleSubmit(event)">
+          <!-- Honeypot for spam -->
+          <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
+          <input type="hidden" name="form-name" value="orders">
+          <input type="hidden" name="order-details" id="orderDetailsField">
+
+          <div class="form-group">
+            <label for="customerName">Your Name *</label>
+            <input type="text" id="customerName" name="name" required placeholder="Full name">
+          </div>
+
+          <div class="form-group">
+            <label for="customerPhone">Phone Number *</label>
+            <input type="tel" id="customerPhone" name="phone" required placeholder="e.g. 587-555-1234">
+          </div>
+
+          <div class="form-group">
+            <label for="customerEmail">Email</label>
+            <input type="email" id="customerEmail" name="email" placeholder="your@email.com">
+          </div>
+
+          <div class="form-group">
+            <label>Order Type *</label>
+            <div class="radio-group">
+              <label class="radio-label">
+                <input type="radio" name="order-type" value="Pickup" checked onchange="toggleDelivery()"> Pickup
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="order-type" value="Delivery" onchange="toggleDelivery()"> Delivery
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group" id="deliveryAddressGroup" style="display:none">
+            <label for="deliveryAddress">Delivery Address *</label>
+            <input type="text" id="deliveryAddress" name="delivery-address" placeholder="Full delivery address">
+          </div>
+
+          <div class="form-group">
+            <label for="orderDate">Preferred Date *</label>
+            <input type="date" id="orderDate" name="preferred-date" required>
+          </div>
+
+          <div class="form-group">
+            <label for="orderTime">Preferred Time *</label>
+            <input type="time" id="orderTime" name="preferred-time" required>
+          </div>
+
+          <div class="form-group">
+            <label for="specialInstructions">Special Instructions</label>
+            <textarea id="specialInstructions" name="special-instructions" placeholder="Any dietary needs, spice preferences, or special requests..."></textarea>
+          </div>
+
+          <!-- Order Summary -->
+          <div class="order-summary-box" id="orderSummaryBox">
+            <!-- Populated by JS -->
+          </div>
+
+          <button type="submit" class="submit-btn">Submit Order</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================
+       TOAST NOTIFICATION
+       ============================================ -->
+  <div class="toast" id="toast"></div>
+
+  <!-- ============================================
+       JAVASCRIPT
+       ============================================ -->
+  <script>
+    /* ===========================================
+       MENU DATA
+       =========================================== */
+    const menuItems = [
+      // PASTRY & SNACKS
+      {
+        id: 1,
+        name: "Meatpie",
+        desc: "Flaky golden pastry filled with seasoned minced meat, potatoes, and carrots.",
+        category: "pastry",
+        categoryLabel: "Pastry & Snacks",
+        emoji: "🥧",
+        variants: [
+          { label: "Platter (12 Pieces)", price: 38 }
+        ]
+      },
+      {
+        id: 2,
+        name: "Puffpuff",
+        desc: "Soft, fluffy Nigerian doughnuts. Lightly sweetened and deep fried to golden perfection.",
+        category: "pastry",
+        categoryLabel: "Pastry & Snacks",
+        emoji: "🍩",
+        variants: [
+          { label: "Half Tray", price: 45 },
+          { label: "Full Tray", price: 80 }
+        ]
+      },
+      {
+        id: 3,
+        name: "Sausage Roll",
+        desc: "Seasoned sausage wrapped in crispy puff pastry. A classic party favorite.",
+        category: "pastry",
+        categoryLabel: "Pastry & Snacks",
+        emoji: "🌭",
+        variants: [
+          { label: "Platter (12 Pieces)", price: 32 }
+        ]
+      },
+      {
+        id: 4,
+        name: "Fish Roll",
+        desc: "Flaky pastry stuffed with seasoned fish filling. Light and savory.",
+        category: "pastry",
+        categoryLabel: "Pastry & Snacks",
+        emoji: "🐟",
+        variants: [
+          { label: "Platter (12 Pieces)", price: 32 }
+        ]
+      },
+      {
+        id: 5,
+        name: "Chin Chin",
+        desc: "Crunchy, bite-sized fried dough snacks. Sweet, addictive, and perfect for sharing.",
+        category: "pastry",
+        categoryLabel: "Pastry & Snacks",
+        emoji: "🍪",
+        variants: [
+          { label: "Half Tray", price: 50 },
+          { label: "Full Tray", price: 100 }
+        ]
+      },
+
+      // RICE DISHES & PROTEINS
+      {
+        id: 6,
+        name: "Fried Rice",
+        desc: "Nigerian-style fried rice with mixed vegetables, liver, and prawns. Colorful and flavorful.",
+        category: "rice",
+        categoryLabel: "Rice Dishes & Proteins",
+        emoji: "🍚",
+        variants: [
+          { label: "Half Tray", price: 60 },
+          { label: "Full Tray", price: 120 }
+        ]
+      },
+      {
+        id: 7,
+        name: "Jollof Rice",
+        desc: "West Africa's beloved one-pot rice dish, cooked in a rich tomato and pepper base.",
+        category: "rice",
+        categoryLabel: "Rice Dishes & Proteins",
+        emoji: "🍅",
+        variants: [
+          { label: "Half Tray", price: 50 },
+          { label: "Full Tray", price: 100 }
+        ]
+      },
+      {
+        id: 8,
+        name: "Ofada Rice",
+        desc: "Unpolished heritage rice with a nutty flavor. Traditionally served with spicy Ayamashe sauce.",
+        category: "rice",
+        categoryLabel: "Rice Dishes & Proteins",
+        emoji: "🌾",
+        variants: [
+          { label: "Half Tray", price: 60 },
+          { label: "Full Tray", price: 100 }
+        ]
+      },
+      {
+        id: 9,
+        name: "Yam Porridge",
+        desc: "Hearty yam chunks cooked in a savory, peppery sauce with vegetables and spices.",
+        category: "rice",
+        categoryLabel: "Rice Dishes & Proteins",
+        emoji: "🍠",
+        variants: [
+          { label: "Half Tray", price: 100 },
+          { label: "Large Tray", price: 200 }
+        ]
+      },
+      {
+        id: 10,
+        name: "Peppered Chicken",
+        desc: "Tender chicken pieces coated in a fiery pepper sauce. Available hard (crispy) or soft.",
+        category: "rice",
+        categoryLabel: "Rice Dishes & Proteins",
+        emoji: "🍗",
+        variants: [
+          { label: "25 Pieces (Hard/Soft)", price: 80 }
+        ]
+      },
+      {
+        id: 11,
+        name: "Peppered Turkey",
+        desc: "Succulent turkey pieces in a bold, spicy pepper sauce. A Nigerian party staple.",
+        category: "rice",
+        categoryLabel: "Rice Dishes & Proteins",
+        emoji: "🦃",
+        variants: [
+          { label: "20 Pieces", price: 100 }
+        ]
+      },
+      {
+        id: 12,
+        name: "Stewed Whiting Fish",
+        desc: "Whiting fish gently stewed in a rich, seasoned tomato and pepper sauce.",
+        category: "rice",
+        categoryLabel: "Rice Dishes & Proteins",
+        emoji: "🐠",
+        variants: [
+          { label: "25 Pieces", price: 80 }
+        ]
+      },
+      {
+        id: 13,
+        name: "Peppered Beef",
+        desc: "Tender beef chunks smothered in a thick, spicy pepper sauce. Rich and satisfying.",
+        category: "rice",
+        categoryLabel: "Rice Dishes & Proteins",
+        emoji: "🥩",
+        variants: [
+          { label: "Medium", price: 150 },
+          { label: "Large", price: 300 }
+        ]
+      },
+      {
+        id: 14,
+        name: "Moinmoin",
+        desc: "Steamed bean pudding made from blended black-eyed peas, peppers, and spices.",
+        category: "rice",
+        categoryLabel: "Rice Dishes & Proteins",
+        emoji: "🫘",
+        variants: [
+          { label: "Leaf Wrap (Dozen)", price: 60 },
+          { label: "Tin Foil (Dozen)", price: 50 }
+        ]
+      },
+      {
+        id: 15,
+        name: "Peppered Snail",
+        desc: "Giant African snails in a rich, peppery sauce. A prized Nigerian delicacy.",
+        category: "rice",
+        categoryLabel: "Rice Dishes & Proteins",
+        emoji: "🐌",
+        variants: [
+          { label: "10 Pieces", price: 150 }
+        ]
+      },
+      {
+        id: 16,
+        name: "Peppered Ponmo",
+        desc: "Cow skin (ponmo) prepared in a spicy pepper sauce. A popular protein side dish.",
+        category: "rice",
+        categoryLabel: "Rice Dishes & Proteins",
+        emoji: "🔥",
+        variants: [
+          { label: "1/4 Tray", price: 80 },
+          { label: "1/2 Tray", price: 140 }
+        ]
+      },
+
+      // SOUPS & STEWS
+      {
+        id: 17,
+        name: "Efo Riro with Assorted Meat",
+        desc: "Rich spinach stew cooked with palm oil, locust beans, and assorted meats. A Yoruba classic.",
+        category: "soups",
+        categoryLabel: "Soups & Stews",
+        emoji: "🥬",
+        variants: [
+          { label: "2.5 Litres", price: 90 }
+        ]
+      },
+      {
+        id: 18,
+        name: "Ogbono with Bitter Leaf",
+        desc: "Thick, draw soup made from ground ogbono seeds with bitter leaf and assorted proteins.",
+        category: "soups",
+        categoryLabel: "Soups & Stews",
+        emoji: "🍲",
+        variants: [
+          { label: "2.5 Litres", price: 90 }
+        ]
+      },
+      {
+        id: 19,
+        name: "Egusi with Assorted Meat",
+        desc: "Hearty melon seed soup thickened to perfection, loaded with leafy greens and assorted meats.",
+        category: "soups",
+        categoryLabel: "Soups & Stews",
+        emoji: "🫕",
+        variants: [
+          { label: "2.5 Litres", price: 90 }
+        ]
+      },
+      {
+        id: 20,
+        name: "Okro Asepo with Seafood",
+        desc: "Thick okra soup cooked with a medley of seafood. Silky texture with bold, deep flavors.",
+        category: "soups",
+        categoryLabel: "Soups & Stews",
+        emoji: "🦐",
+        variants: [
+          { label: "2.5 Litres", price: 90 }
+        ]
+      },
+      {
+        id: 21,
+        name: "Banga Soup",
+        desc: "Palm fruit soup from Southern Nigeria. Creamy, aromatic, and rich with traditional spices.",
+        category: "soups",
+        categoryLabel: "Soups & Stews",
+        emoji: "🌴",
+        variants: [
+          { label: "2.5 Litres", price: 110 }
+        ]
+      },
+      {
+        id: 22,
+        name: "Assorted Pepper Soup",
+        desc: "A warming, spicy broth loaded with assorted meats. The ultimate comfort food.",
+        category: "soups",
+        categoryLabel: "Soups & Stews",
+        emoji: "🌶️",
+        variants: [
+          { label: "2.5 Litres", price: 95 },
+          { label: "3.5 Litres", price: 130 }
+        ]
+      },
+      {
+        id: 23,
+        name: "Catfish Pepper Soup",
+        desc: "Fresh catfish simmered in a fragrant, spicy broth with African herbs and spices.",
+        category: "soups",
+        categoryLabel: "Soups & Stews",
+        emoji: "🐱",
+        variants: [
+          { label: "2.5 Litres", price: 95 },
+          { label: "3.5 Litres", price: 130 }
+        ]
+      },
+      {
+        id: 24,
+        name: "Ayamashe (Green or Red)",
+        desc: "Bold designer stew from Lagos. Available in green (with shombo peppers) or red style.",
+        category: "soups",
+        categoryLabel: "Soups & Stews",
+        emoji: "🫑",
+        variants: [
+          { label: "2.5 Litres", price: 90 }
+        ]
+      },
+      {
+        id: 25,
+        name: "Gbegiri Soup",
+        desc: "Smooth, creamy bean soup. Traditionally paired with Ewedu and served over Amala.",
+        category: "soups",
+        categoryLabel: "Soups & Stews",
+        emoji: "🥣",
+        variants: [
+          { label: "2.5 Litres", price: 60 },
+          { label: "3.5 Litres", price: 110 }
+        ]
+      },
+      {
+        id: 26,
+        name: "Fish Stew",
+        desc: "Rich tomato-based stew loaded with fresh fish. A versatile staple for rice, yam, or bread.",
+        category: "soups",
+        categoryLabel: "Soups & Stews",
+        emoji: "🐟",
+        variants: [
+          { label: "2.5 Litres", price: 90 },
+          { label: "3.5 Litres", price: 120 }
+        ]
+      },
+      {
+        id: 27,
+        name: "Assorted Meat Stew",
+        desc: "Classic Nigerian tomato stew simmered with assorted meats. The everyday essential.",
+        category: "soups",
+        categoryLabel: "Soups & Stews",
+        emoji: "🍖",
+        variants: [
+          { label: "2.5 Litres", price: 100 }
+        ]
+      },
+      {
+        id: 28,
+        name: "Assorted Goat Meat",
+        desc: "Tender goat meat prepared in a rich, spiced stew. Full of flavor and slow-cooked goodness.",
+        category: "soups",
+        categoryLabel: "Soups & Stews",
+        emoji: "🐐",
+        variants: [
+          { label: "2.5 Litres", price: 110 },
+          { label: "3.5 Litres", price: 150 }
+        ]
+      },
+      {
+        id: 29,
+        name: "Gizidodo",
+        desc: "A beloved combo of spicy peppered gizzards and sweet fried plantains. The perfect pair.",
+        category: "soups",
+        categoryLabel: "Soups & Stews",
+        emoji: "🍌",
+        variants: [
+          { label: "Half Tray", price: 120 },
+          { label: "Full Tray", price: 220 }
+        ]
+      }
+    ];
+
+    /* ===========================================
+       CART STATE
+       =========================================== */
+    let cart = [];
+
+    /* ===========================================
+       RENDER MENU
+       =========================================== */
+    function renderMenu(filter = 'all') {
+      const grid = document.getElementById('menuGrid');
+      grid.innerHTML = '';
+
+      const filtered = filter === 'all'
+        ? menuItems
+        : menuItems.filter(item => item.category === filter);
+
+      filtered.forEach((item, index) => {
+        const card = document.createElement('div');
+        card.className = 'menu-card';
+        card.dataset.category = item.category;
+
+        const variantOptions = item.variants.map((v, i) =>
+          `<option value="${i}" data-price="${v.price}">${v.label} - $${v.price}</option>`
+        ).join('');
+
+        card.innerHTML = `
+          <span class="menu-card-category">${item.categoryLabel}</span>
+          <div class="menu-card-header">
+            <div class="menu-emoji">${item.emoji}</div>
+            <div class="menu-card-info">
+              <div class="menu-card-name">${item.name}</div>
+              <div class="menu-card-desc">${item.desc}</div>
+            </div>
+          </div>
+          <div class="menu-card-bottom">
+            <select class="variant-select" id="variant-${item.id}" onchange="updatePrice(${item.id})">
+              ${variantOptions}
+            </select>
+            <span class="menu-price" id="price-${item.id}">$${item.variants[0].price}</span>
+            <button class="add-to-cart-btn" onclick="addToCart(${item.id})">Add to Cart</button>
+          </div>
+        `;
+
+        grid.appendChild(card);
+
+        // Staggered fade-in animation
+        setTimeout(() => {
+          card.classList.add('visible');
+        }, index * 60);
+      });
+    }
+
+    /* ===========================================
+       MENU FILTER
+       =========================================== */
+    function filterMenu(category) {
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      event.target.classList.add('active');
+      renderMenu(category);
+    }
+
+    /* ===========================================
+       UPDATE PRICE DISPLAY
+       =========================================== */
+    function updatePrice(itemId) {
+      const select = document.getElementById(`variant-${itemId}`);
+      const priceEl = document.getElementById(`price-${itemId}`);
+      const selectedOption = select.options[select.selectedIndex];
+      priceEl.textContent = `$${selectedOption.dataset.price}`;
+    }
+
+    /* ===========================================
+       CART FUNCTIONS
+       =========================================== */
+    function addToCart(itemId) {
+      const item = menuItems.find(m => m.id === itemId);
+      const select = document.getElementById(`variant-${itemId}`);
+      const variantIndex = parseInt(select.value);
+      const variant = item.variants[variantIndex];
+
+      // Check if same item + variant already in cart
+      const existingIndex = cart.findIndex(
+        c => c.itemId === itemId && c.variantIndex === variantIndex
+      );
+
+      if (existingIndex >= 0) {
+        cart[existingIndex].qty += 1;
+      } else {
+        cart.push({
+          itemId: itemId,
+          name: item.name,
+          variantLabel: variant.label,
+          variantIndex: variantIndex,
+          price: variant.price,
+          qty: 1
+        });
+      }
+
+      updateCartUI();
+      showToast(`${item.name} added to cart!`);
+    }
+
+    function removeFromCart(index) {
+      cart.splice(index, 1);
+      updateCartUI();
+    }
+
+    function updateQty(index, delta) {
+      cart[index].qty += delta;
+      if (cart[index].qty <= 0) {
+        cart.splice(index, 1);
+      }
+      updateCartUI();
+    }
+
+    function getCartTotal() {
+      return cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+    }
+
+    function updateCartUI() {
+      const badge = document.getElementById('cartBadge');
+      const totalEl = document.getElementById('cartTotal');
+      const itemsEl = document.getElementById('cartItems');
+      const checkoutBtn = document.getElementById('checkoutBtn');
+      const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+      const totalPrice = getCartTotal();
+
+      // Badge
+      if (totalItems > 0) {
+        badge.classList.remove('hidden');
+        badge.textContent = totalItems;
+      } else {
+        badge.classList.add('hidden');
+      }
+
+      // Total
+      totalEl.textContent = `$${totalPrice.toFixed(2)}`;
+
+      // Checkout button
+      checkoutBtn.disabled = cart.length === 0;
+
+      // Cart items
+      if (cart.length === 0) {
+        itemsEl.innerHTML = `
+          <div class="cart-empty">
+            <span class="empty-icon">🍽</span>
+            Your cart is empty.<br>Browse the menu to add items!
+          </div>
+        `;
+        return;
+      }
+
+      itemsEl.innerHTML = cart.map((item, i) => `
+        <div class="cart-item">
+          <div class="cart-item-top">
+            <span class="cart-item-name">${item.name}</span>
+            <button class="cart-item-remove" onclick="removeFromCart(${i})" aria-label="Remove ${item.name}">&times;</button>
+          </div>
+          <div class="cart-item-variant">${item.variantLabel}</div>
+          <div class="cart-item-bottom">
+            <div class="cart-qty">
+              <button onclick="updateQty(${i}, -1)" aria-label="Decrease quantity">-</button>
+              <span>${item.qty}</span>
+              <button onclick="updateQty(${i}, 1)" aria-label="Increase quantity">+</button>
+            </div>
+            <span class="cart-item-price">$${(item.price * item.qty).toFixed(2)}</span>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    /* ===========================================
+       CART DRAWER
+       =========================================== */
+    function openCart() {
+      document.getElementById('cartOverlay').classList.add('open');
+      document.getElementById('cartDrawer').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeCart() {
+      document.getElementById('cartOverlay').classList.remove('open');
+      document.getElementById('cartDrawer').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    /* ===========================================
+       ORDER FORM
+       =========================================== */
+    function openOrderForm() {
+      closeCart();
+      populateOrderSummary();
+      document.getElementById('orderModal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+
+      // Set min date to today
+      const today = new Date().toISOString().split('T')[0];
+      document.getElementById('orderDate').min = today;
+    }
+
+    function closeOrderForm() {
+      document.getElementById('orderModal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function toggleDelivery() {
+      const isDelivery = document.querySelector('input[name="order-type"]:checked').value === 'Delivery';
+      const addressGroup = document.getElementById('deliveryAddressGroup');
+      const addressInput = document.getElementById('deliveryAddress');
+
+      if (isDelivery) {
+        addressGroup.style.display = 'block';
+        addressInput.required = true;
+      } else {
+        addressGroup.style.display = 'none';
+        addressInput.required = false;
+      }
+    }
+
+    function populateOrderSummary() {
+      const box = document.getElementById('orderSummaryBox');
+      const total = getCartTotal();
+
+      let html = '<h4>Order Summary</h4>';
+      cart.forEach(item => {
+        html += `
+          <div class="order-summary-item">
+            <span>${item.name} (${item.variantLabel}) x${item.qty}</span>
+            <span>$${(item.price * item.qty).toFixed(2)}</span>
+          </div>
+        `;
+      });
+      html += `
+        <div class="order-summary-total">
+          <span>Total</span>
+          <span>$${total.toFixed(2)}</span>
+        </div>
+      `;
+      box.innerHTML = html;
+
+      // Set hidden field with order JSON
+      const orderData = cart.map(item => ({
+        name: item.name,
+        variant: item.variantLabel,
+        qty: item.qty,
+        unitPrice: item.price,
+        subtotal: item.price * item.qty
+      }));
+
+      document.getElementById('orderDetailsField').value = JSON.stringify({
+        items: orderData,
+        total: total
+      });
+    }
+
+    function handleSubmit(e) {
+      // Let Netlify handle the form natively
+      // On non-Netlify environments, show a success message
+      if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        e.preventDefault();
+        alert('Order submitted! (This is a local preview. On Netlify, the form will be submitted automatically.)');
+        closeOrderForm();
+        cart = [];
+        updateCartUI();
+        return false;
+      }
+
+      // On Netlify, allow default form submission
+      // After submit, clear cart
+      setTimeout(() => {
+        cart = [];
+        updateCartUI();
+      }, 1000);
+
+      return true;
+    }
+
+    /* ===========================================
+       TOAST NOTIFICATION
+       =========================================== */
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      toast.textContent = message;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2000);
+    }
+
+    /* ===========================================
+       MOBILE NAVIGATION
+       =========================================== */
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('open');
+      document.getElementById('hamburger').classList.toggle('active');
+    }
+
+    function closeMenu() {
+      document.getElementById('navLinks').classList.remove('open');
+      document.getElementById('hamburger').classList.remove('active');
+    }
+
+    /* ===========================================
+       SCROLL ANIMATIONS
+       =========================================== */
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // Render menu
+      renderMenu();
+
+      // Observe fade-in sections
+      document.querySelectorAll('.fade-in-section').forEach(el => {
+        observer.observe(el);
+      });
+
+      // Close cart/modal on Escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          closeCart();
+          closeOrderForm();
+        }
+      });
+
+      // Close mobile menu when clicking outside
+      document.addEventListener('click', (e) => {
+        const navLinks = document.getElementById('navLinks');
+        const hamburger = document.getElementById('hamburger');
+        if (navLinks.classList.contains('open') &&
+            !navLinks.contains(e.target) &&
+            !hamburger.contains(e.target)) {
+          closeMenu();
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
