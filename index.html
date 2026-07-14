@@ -458,6 +458,16 @@
       margin-bottom: 0.75rem;
     }
 
+    .menu-card-image {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 0.85rem;
+      display: block;
+      background: var(--cream);
+    }
+
     .menu-emoji {
       font-size: 2.2rem;
       flex-shrink: 0;
@@ -1675,6 +1685,7 @@
         category: "pastry",
         categoryLabel: "Pastry & Snacks",
         emoji: "🥧",
+        image: "images/menu/meatpie.webp",
         variants: [
           { label: "Platter (12 Pieces)", price: 38 }
         ]
@@ -1686,6 +1697,7 @@
         category: "pastry",
         categoryLabel: "Pastry & Snacks",
         emoji: "🍩",
+        image: "images/menu/puffpuff.webp",
         variants: [
           { label: "Half Tray", price: 45 },
           { label: "Full Tray", price: 80 }
@@ -1695,6 +1707,7 @@
         id: 3,
         name: "Sausage Roll",
         desc: "Seasoned sausage wrapped in crispy puff pastry. A classic party favorite.",
+        image: "images/menu/sausage-roll.webp",
         category: "pastry",
         categoryLabel: "Pastry & Snacks",
         emoji: "🌭",
@@ -1705,6 +1718,7 @@
       {
         id: 4,
         name: "Fish Roll",
+        image: "images/menu/fish-roll.webp",
         desc: "Flaky pastry stuffed with seasoned fish filling. Light and savory.",
         category: "pastry",
         categoryLabel: "Pastry & Snacks",
@@ -1716,6 +1730,7 @@
       {
         id: 5,
         name: "Chin Chin",
+        image: "images/menu/chin-chin.webp",
         desc: "Crunchy, bite-sized fried dough snacks. Sweet, addictive, and perfect for sharing.",
         category: "pastry",
         categoryLabel: "Pastry & Snacks",
@@ -1730,6 +1745,7 @@
       {
         id: 6,
         name: "Fried Rice",
+        image: "images/menu/fried-rice.webp",
         desc: "Nigerian-style fried rice with mixed vegetables, liver, and prawns. Colorful and flavorful.",
         category: "rice",
         categoryLabel: "Rice Dishes & Proteins",
@@ -1742,6 +1758,7 @@
       {
         id: 7,
         name: "Jollof Rice",
+        image: "images/menu/jollof-rice.webp",
         desc: "West Africa's beloved one-pot rice dish, cooked in a rich tomato and pepper base.",
         category: "rice",
         categoryLabel: "Rice Dishes & Proteins",
@@ -1766,6 +1783,7 @@
       {
         id: 9,
         name: "Yam Porridge",
+        image: "images/menu/yam-porridge.webp",
         desc: "Hearty yam chunks cooked in a savory, peppery sauce with vegetables and spices.",
         category: "rice",
         categoryLabel: "Rice Dishes & Proteins",
@@ -1778,6 +1796,7 @@
       {
         id: 10,
         name: "Peppered Chicken",
+        image: "images/menu/peppered-chicken.webp",
         desc: "Tender chicken pieces coated in a fiery pepper sauce. Available hard (crispy) or soft.",
         category: "rice",
         categoryLabel: "Rice Dishes & Proteins",
@@ -1800,6 +1819,7 @@
       {
         id: 12,
         name: "Stewed Whiting Fish",
+        image: "images/menu/stewed-whiting-fish.webp",
         desc: "Whiting fish gently stewed in a rich, seasoned tomato and pepper sauce.",
         category: "rice",
         categoryLabel: "Rice Dishes & Proteins",
@@ -1823,6 +1843,7 @@
       {
         id: 14,
         name: "Moinmoin",
+        image: "images/menu/moinmoin.webp",
         desc: "Steamed bean pudding made from blended black-eyed peas, peppers, and spices.",
         category: "rice",
         categoryLabel: "Rice Dishes & Proteins",
@@ -1846,6 +1867,7 @@
       {
         id: 16,
         name: "Peppered Ponmo",
+        image: "images/menu/peppered-ponmo.webp",
         desc: "Cow skin (ponmo) prepared in a spicy pepper sauce. A popular protein side dish.",
         category: "rice",
         categoryLabel: "Rice Dishes & Proteins",
@@ -1860,6 +1882,7 @@
       {
         id: 17,
         name: "Efo Riro with Assorted Meat",
+        image: "images/menu/efo-riro-with-assorted-meat.webp",
         desc: "Rich spinach stew cooked with palm oil, locust beans, and assorted meats. A Yoruba classic.",
         category: "soups",
         categoryLabel: "Soups & Stews",
@@ -1882,6 +1905,7 @@
       {
         id: 19,
         name: "Egusi with Assorted Meat",
+        image: "images/menu/egusi-with-assorted-meat.webp",
         desc: "Hearty melon seed soup thickened to perfection, loaded with leafy greens and assorted meats.",
         category: "soups",
         categoryLabel: "Soups & Stews",
@@ -1939,6 +1963,7 @@
       {
         id: 24,
         name: "Ayamashe (Green or Red)",
+        image: "images/menu/ayamashe-red.webp",
         desc: "Bold designer stew from Lagos. Available in green (with shombo peppers) or red style.",
         category: "soups",
         categoryLabel: "Soups & Stews",
@@ -2033,10 +2058,18 @@
           `<option value="${i}" data-price="${v.price}">${v.label} - $${v.price}</option>`
         ).join('');
 
+        const imageBlock = item.image
+          ? `<img class="menu-card-image" src="${item.image}" alt="${item.name}" loading="lazy" width="800" height="500">`
+          : '';
+        const emojiBlock = item.image
+          ? ''
+          : `<div class="menu-emoji">${item.emoji}</div>`;
+
         card.innerHTML = `
           <span class="menu-card-category">${item.categoryLabel}</span>
+          ${imageBlock}
           <div class="menu-card-header">
-            <div class="menu-emoji">${item.emoji}</div>
+            ${emojiBlock}
             <div class="menu-card-info">
               <div class="menu-card-name">${item.name}</div>
               <div class="menu-card-desc">${item.desc}</div>
